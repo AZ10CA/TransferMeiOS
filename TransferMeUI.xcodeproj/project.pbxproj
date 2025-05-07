@@ -19,6 +19,8 @@
 		82A50B2B2DC3B17200344D9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82A50B252DC3B17200344D9B /* Assets.xcassets */; };
 		82A50B2F2DC3B19B00344D9B /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A50B2E2DC3B19B00344D9B /* Logo.swift */; };
 		82A50B312DC3B4EE00344D9B /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A50B302DC3B4EE00344D9B /* SplashScreen.swift */; };
+		82BF8DBD2DCBA38200FB1911 /* Font+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF8DBC2DCBA38200FB1911 /* Font+App.swift */; };
+		82BF8DBF2DCBA56F00FB1911 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF8DBE2DCBA56F00FB1911 /* PrimaryButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		82A50B272DC3B17200344D9B /* TransferMeUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferMeUIApp.swift; sourceTree = "<group>"; };
 		82A50B2E2DC3B19B00344D9B /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		82A50B302DC3B4EE00344D9B /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		82BF8DBC2DCBA38200FB1911 /* Font+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+App.swift"; sourceTree = "<group>"; };
+		82BF8DBE2DCBA56F00FB1911 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 		82A50B2C2DC3B17800344D9B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				82BF8DBB2DCBA37C00FB1911 /* Shared */,
 				8243A2D22DC527D6009DADB7 /* Splash */,
 				8243A2DA2DC530BC009DADB7 /* Onboarding */,
 			);
@@ -147,6 +152,15 @@
 				8243A2D92DC52C5E009DADB7 /* Navigation */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		82BF8DBB2DCBA37C00FB1911 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				82BF8DBC2DCBA38200FB1911 /* Font+App.swift */,
+				82BF8DBE2DCBA56F00FB1911 /* PrimaryButton.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,10 +239,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82BF8DBF2DCBA56F00FB1911 /* PrimaryButton.swift in Sources */,
 				82A50B312DC3B4EE00344D9B /* SplashScreen.swift in Sources */,
 				82A50B292DC3B17200344D9B /* RootView.swift in Sources */,
 				82A50B2F2DC3B19B00344D9B /* Logo.swift in Sources */,
 				8243A2DC2DC530CC009DADB7 /* Onboarding.swift in Sources */,
+				82BF8DBD2DCBA38200FB1911 /* Font+App.swift in Sources */,
 				8243A2D82DC52C52009DADB7 /* NavigationRouter.swift in Sources */,
 				82A50B2A2DC3B17200344D9B /* TransferMeUIApp.swift in Sources */,
 				8243A2D62DC52C20009DADB7 /* AppRoute.swift in Sources */,

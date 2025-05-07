@@ -24,13 +24,12 @@ struct SplashScreen: View {
                 
                 Group {
                     Text("TransferMe")
-                        .font(.custom("SFProDisplay-Bold", size: 55))
-                        .bold()
+                        .font(.sfDisplay(55, weight: .bold))
                         .padding(.bottom, 8)
                         
                     
                     Text("Your Best Money Transfer Partner.")
-                        .font(.custom("SFProDisplay-Regular", size: 14))
+                        .font(.sfDisplay(14, weight: .regular))
                 }
                 .foregroundStyle(Color.textColorPrimary)
                 
@@ -41,11 +40,11 @@ struct SplashScreen: View {
                 let textColor2 = colorScheme == .light ? Color.accentColor : Color.white
                 
                 (Text("Secured by ")
-                    .font(.custom("SFProDisplay-Regular", size: 16))
+                    .font(.sfDisplay(16, weight: .regular))
                     .foregroundStyle(textColor1)
                 +
                     Text("TransferMe.")
-                    .font(.custom("SFProDisplay-Regular", size: 16))
+                    .font(.sfDisplay(16, weight: .regular))
                     .foregroundStyle(textColor2))
                 
             }
