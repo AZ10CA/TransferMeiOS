@@ -7,23 +7,11 @@
 
 import SwiftUI
 
-struct Onboarding: View {
-    @State private var showWelcomeScreen: Bool = true;
+
+struct OnboardinWelcomeScreen: View {
+    @Binding var showWelcomeScreen: Bool
     
     var body: some View {
-        ZStack {
-            if showWelcomeScreen {
-                welcomeScreen
-                    .transition(.move(edge: .leading))
-            } else {
-                Text("Main Onboarding Content") // Replace with actual onboarding flow
-                    .transition(.move(edge: .trailing))
-            }
-        }
-        .animation(.easeInOut, value: showWelcomeScreen)
-    }
-
-    private var welcomeScreen: some View {
         ZStack {
             Color.white
                 .ignoresSafeArea()
@@ -56,7 +44,59 @@ struct Onboarding: View {
             }
         }
     }
+}
 
+struct Onboarding: View {
+    let onboardingPageCount = 3;
+    
+    @State private var showWelcomeScreen: Bool = true;
+    
+    var body: some View {
+        ZStack {
+            if showWelcomeScreen {
+                OnboardinWelcomeScreen(showWelcomeScreen: $showWelcomeScreen)
+                    .transition(.move(edge: .leading))
+            } else {
+                OnboardingPagerView()
+                    .transition(.move(edge:. trailing))
+            }
+        }
+        .animation(.easeInOut, value: showWelcomeScreen)
+    }
+}
+
+struct OnboardingPagerView: View {
+    @State private var currentPage = 0
+
+    var body: some View {
+        TabView(selection: $currentPage) {
+            ForEach(1..<8) { index in
+                OnboardingPage(number: index)
+                    .tag(index)
+            }
+        }
+        .tabViewStyle(.page)
+        .indexViewStyle(.page(backgroundDisplayMode: .always))
+    }
+}
+
+
+struct OnboardingPage: View {
+    let number: Int
+    var title: String { "onboarding_title_\(number)" }
+    var description: String { "onboarding_description_\(number)" };
+    var imagePath: String { "onboarding/\(number)" }
+    
+    var body: some View {
+        VStack {
+            Image(self.imagePath)
+            
+            Text(LocalizedStringKey(self.title))
+                .font(.title)
+            
+            Text(LocalizedStringKey(self.description))
+        }
+    }
 }
 
 #Preview {
